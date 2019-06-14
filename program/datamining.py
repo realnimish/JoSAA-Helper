@@ -1,3 +1,6 @@
+import pickle,os
+clean = 'cls' if os.name=='nt' else 'clear'
+
 class mining:
     
     def __init__(self):
@@ -26,7 +29,7 @@ class mining:
                 data2[0] = int(raw_input('\nOpening Rank of round '+str(i+1)+' in 2018 : '))
                 data2[1] = int(raw_input('Closing Rank of round '+str(i+1)+' in 2018 : '))      
 
-            os.system('cls')
+            os.system(clean)
             self.state.append([data1,data2])
         else:
             print'\nData uploaded successfully!\n'
@@ -43,7 +46,7 @@ class mining:
         print 'Course : ',self.course
         self.state[new-1][1][0] = int(raw_input('\nOpening Rank of 2018  : '))
         self.state[new-1][1][1] = int(raw_input('Closing Rank of 2018  : '))
-        os.system('cls')
+        os.system(clean)
 
 
     def tabular(self):
@@ -76,7 +79,7 @@ def analysis():
         print table
         file3.seek(0)
         ch = int(raw_input("Select your choice (0 for none) : "))   #GO for Loop
-        os.system('cls')
+        os.system(clean)
         if ch:
             for i in range(ch):
                 obj5 = pickle.load(file3)
@@ -117,7 +120,7 @@ def start():
         
         print '\n1. Analysis\n2. New Record\n3. Update\n'
         ch = raw_input('Enter your choice : ')
-        os.system('cls')
+        os.system(clean)
         if ch=='1':
             if analysis():
                 return
@@ -131,8 +134,7 @@ def start():
         loop = raw_input("\nPress enter to start over (0 to go back).... ")
         
 #Driver Code
-
-import pickle,os
+        
 try:                                                
     from prettytable import PrettyTable as PT               
 except:                

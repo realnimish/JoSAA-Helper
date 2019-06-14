@@ -8,6 +8,7 @@ except:
     print"\nPrettytable module NOT installed on your pc !! Please install it first...\nTerminating.\n"
     quit()
 
+clean = 'cls' if os.name=='nt' else 'clear'
 
 class build:
 
@@ -110,7 +111,7 @@ def new():
     ################################
 
     sort(table)             # Manage S.No
-    os.system('cls')
+    os.system(clean)
     print '\n*** Based on Last stage Cut-offs AND no HS considered ***\n'
     print table
 
@@ -136,7 +137,7 @@ def old():
     memo = raw_input("\nWhich record data to show : ")
     with open(memo+".txt", "a+") as fp:
         mytable = from_csv(fp)
-    os.system('cls')
+    os.system(clean)
     sort(mytable)
     print mytable
 
@@ -145,21 +146,21 @@ def guide():
     '''
         Currently a manual procedure but would later be added in an update
                                                                                                                 '''
-    os.system('cls')
+    os.system(clean)
     print '\nALGORITHM TO HELP DECIDE THE BEST OPTION!'
 
     choice = raw_input("\nWhat Suits your better :-    1. YOU are sure to pursue higher studies after ug\n\
                              2. YOU want to settle early with a job\n\
                              3. YOU are not sure\n\n\
                 Select : ")
-    os.system('cls')
+    os.system(clean)
     if choice == '1':
         print '\nYour first preference should be the course then Select the best college offering you the course\n\
                 Prefer Tier 1 & Tier 2 colleges only!'
     elif choice =='2':
         print "\nChoose the best college you could get irrespective of the branch."
     else:
-        os.system('cls')
+        os.system(clean)
         print open('guide.txt').read()
 
 def newyear():      # Admin function to feed new year data
@@ -180,7 +181,7 @@ loop=1
 try:
         
     while loop!='0':
-        os.system('cls')
+        os.system(clean)
         choice = raw_input("\nWhich Category to Search     --> a. New Search\n\
                              --> b. Wishlist\n\
                              --> c. Analysis\n\
