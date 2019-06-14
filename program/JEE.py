@@ -63,6 +63,9 @@ def new():
             print'Data not found :(\n'
             file0.close()
             return
+    else:
+        print 'Invalid Choice!\n'
+        return
                 
 
     duration = raw_input("\nCourse Duration (4 or 5 Years) : ")
